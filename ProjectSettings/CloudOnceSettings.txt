@@ -1,0 +1,18 @@
+{
+	"AchievementIDs":[],
+	"LeaderboardIDs":[
+		{
+			"InternalID":"HighScore",
+			"AppleID":"",
+			"GoogleID":"CgkI9cXY3pofEAIQAA"
+		}
+	],
+	"CloudVariables":[],
+	"AppleSupported":false,
+	"GoogleSupported":true,
+	"GoogleAppID":"1072329794293",
+	"GoogleSetupRun":true,
+	"DebugModeEnabled":true,
+	"Version":"2.7.2",
+	"SettingsLocation":"0"
+}

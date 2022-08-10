@@ -1,0 +1,48 @@
+using EasyUI.Toast;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enlarge : MonoBehaviour
+{
+
+    public GameObject pickupeffect;
+    
+    private float duration = 4f;
+    private float multi = 1.4f;
+
+    private void Start()
+    {
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+
+            StartCoroutine(PickUp(collision));
+        }
+    }
+    IEnumerator PickUp(Collider2D player)
+    {
+        Instantiate(pickupeffect, transform.position, transform.rotation);
+
+        Toast.Show("Grow", 1, ToastColor.Blue);
+        player.transform.localScale *= multi;
+
+       
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(duration);
+
+        player.GetComponent<BoxCollider2D>().isTrigger = false;
+        player.transform.localScale /= multi;
+
+        
+
+
+
+        Destroy(gameObject);
+    }
+}
